@@ -6,7 +6,7 @@ To play the game manually:
 python game.py --p
 ```
 
-To run multiple games automatically using my algorithm and track performance (`--p` is the verbosity flag):
+To run multiple games automatically and track performance (`--p` is the verbosity flag):
 
 ```
 python game.py --p --r 100
@@ -16,7 +16,7 @@ To change the word lists used, please modify the path in both the `wordle.py` an
 - `train_wordlist.yaml`  <- a set of 4,200 english words
 - `dev_wordlist.yaml`    <- a subset of 500 words, used for development
 - `r_wordlist.yaml`      <- another random subset of 500 words (more can be generated using the `multiple_runs.py` script)
-- `nosense_wordlist.yaml`  <- a set of 500 random concatenation of 5 letters
+- `nonsense_wordlist.yaml`  <- a set of 500 random concatenation of 5 letters
 
 
 ## Methodology
