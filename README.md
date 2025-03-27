@@ -1,2 +1,27 @@
-# wordle-solver
-A pyhton program to find the optimal best guess in the popular game online game Worlde.
+# 📚 Wordle Solver
+A program to find the optimal next word to guess in the popular online game [Wordle](https://www.nytimes.com/games/wordle/index.html).
+
+To play the game manually:
+```
+python game.py --p
+```
+
+To run multiple games automatically using my algorithm and track performance use (`--p` is the verbosity flag):
+
+```
+python game.py --p --r 100
+```
+
+
+## Methodology
+At each round, I measure the Shannon Entropy of the remaining words and use the word with the highest one as the optimal guess. Entropy is measured on the probability distribution of the feedback. In particular, for each word left, the feedback is computed against all remaining other words and the counts are used to estimate a probability distribution.
+
+## Results
+On a set of 4,200 possible words, I achieved an accuracy of 100% over 50,000 total trials, with 3.7 average number of guesses to guess the word. When restricted to 500 possible words, this average number of guesses dropped down to 2.91.
+
+| Version     | Results                 | Notes                                                                     | 
+| :---:     | :--:                      | :--:                                                                      |
+| V4        | 100% - 3.7734 - 593.18s   | 50,000 independent runs on train set fo 4,200 words, with printing enabled| 
+| FINAL     | 100% - 2.91 - 0.8s        | On 100 random sets of 500 words from train set                            |
+
+\* Results are formatted as (Accuracy, Average Number of Guesses, Running Time) 
