@@ -6,7 +6,7 @@ To play the game manually:
 python game.py --p
 ```
 
-To run multiple games automatically using my algorithm and track performance use (`--p` is the verbosity flag):
+To run multiple games automatically using my algorithm and track performance (`--p` is the verbosity flag):
 
 ```
 python game.py --p --r 100
