@@ -12,6 +12,12 @@ To run multiple games automatically using my algorithm and track performance (`-
 python game.py --p --r 100
 ```
 
+To change the word lists used, please modify the path in both the `wordle.py` and `guesser.py` files. Available word lists are:
+- `train_wordlist.yaml`  <- a set of 4,200 english words
+- `dev_wordlist.yaml`    <- a subset of 500 words, used for development
+- `r_wordlist.yaml`      <- another random subset of 500 words (more can be generated using the `multiple_runs.py` script)
+- `nosense_wordlist.yaml`  <- a set of 500 random concatenation of 5 letters
+
 
 ## Methodology
 At each round, I measure the Shannon Entropy of the remaining words and use the word with the highest one as the optimal guess. Entropy is measured on the probability distribution of the feedback. In particular, for each word left, the feedback is computed against all remaining other words and the counts are used to estimate a probability distribution.
